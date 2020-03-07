@@ -7,6 +7,8 @@ from app.models import Poll
 
 import app.views
 
+print(r"D:\examples\Python\LearningDjango01\DjangoPolls\app\urls.py started")
+
 urlpatterns = [
     url(r'^$',
         app.views.PollListView.as_view(
@@ -24,3 +26,7 @@ urlpatterns = [
         name='results'),
     url(r'^(?P<poll_id>\d+)/vote/$', app.views.vote, name='vote'),
 ]
+
+
+print(r"D:\examples\Python\LearningDjango01\DjangoPolls\app\urls.py ended")
+

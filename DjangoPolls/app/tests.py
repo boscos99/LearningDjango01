@@ -6,6 +6,8 @@ when you run "manage.py test".
 import django
 from django.test import TestCase
 
+print(r"D:\examples\Python\LearningDjango01\DjangoPolls\app\tests.py started")
+
 # TODO: Configure your database in settings.py and sync before running tests.
 
 class ViewTest(TestCase):
@@ -32,3 +34,5 @@ class ViewTest(TestCase):
         """Tests the about page."""
         response = self.client.get('/about')
         self.assertContains(response, 'About', 3, 200)
+
+print(r"D:\examples\Python\LearningDjango01\DjangoPolls\app\tests.py ended")

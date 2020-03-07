@@ -15,8 +15,11 @@ from os import path
 
 import json
 
+print(r"D:\examples\Python\LearningDjango01\DjangoPolls\app\views.py started")
+
 class PollListView(ListView):
     """Renders the home page, with a list of all polls."""
+    print(r"Renders the home page, with a list of all polls.")
     model = Poll
 
     def get_context_data(self, **kwargs):
@@ -27,6 +30,7 @@ class PollListView(ListView):
 
 class PollDetailView(DetailView):
     """Renders the poll details page."""
+    print(r"Renders the poll details page.")
     model = Poll
 
     def get_context_data(self, **kwargs):
@@ -37,6 +41,7 @@ class PollDetailView(DetailView):
 
 class PollResultsView(DetailView):
     """Renders the results page."""
+    print(r"Renders the results page.")
     model = Poll
 
     def get_context_data(self, **kwargs):
@@ -47,6 +52,7 @@ class PollResultsView(DetailView):
 
 def contact(request):
     """Renders the contact page."""
+    print(r"Renders the contact page.")
     assert isinstance(request, HttpRequest)
     return render(
         request,
@@ -60,6 +66,7 @@ def contact(request):
 
 def about(request):
     """Renders the about page."""
+    print(r"Renders the about page.")
     assert isinstance(request, HttpRequest)
     return render(
         request,
@@ -73,6 +80,7 @@ def about(request):
 
 def vote(request, poll_id):
     """Handles voting. Validates input and updates the repository."""
+    print(r"Handles voting. Validates input and updates the repository.")
     poll = get_object_or_404(Poll, pk=poll_id)
     try:
         selected_choice = poll.choice_set.get(pk=request.POST['choice'])
@@ -91,6 +99,7 @@ def vote(request, poll_id):
 @login_required
 def seed(request):
     """Seeds the database with sample polls."""
+    print(r"Seeds the database with sample polls.")
     samples_path = path.join(path.dirname(__file__), 'samples.json')
     with open(samples_path, 'r') as samples_file:
         samples_polls = json.load(samples_file)
@@ -107,5 +116,9 @@ def seed(request):
             choice.text = sample_choice
             choice.votes = 0
             choice.save()
+
+
+    
+    print(r"D:\examples\Python\LearningDjango01\DjangoPolls\app\views.py ended")
 
     return HttpResponseRedirect(reverse('app:home'))

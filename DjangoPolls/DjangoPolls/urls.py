@@ -10,6 +10,9 @@ import django.contrib.auth.views
 import app.forms
 import app.views
 
+print(r"D:\examples\Python\LearningDjango01\DjangoPolls\DjangoPolls\urls.py started")
+
+print(r"admin.autodiscover()")
 admin.autodiscover()
 
 urlpatterns = [
@@ -41,3 +44,5 @@ urlpatterns = [
 
     url(r'^admin/', include(admin.site.urls)),
 ]
+
+print(r"D:\examples\Python\LearningDjango01\DjangoPolls\DjangoPolls\urls.py ended")

@@ -15,6 +15,8 @@ framework.
 """
 import os
 
+print(r"D:\examples\Python\LearningDjango01\DjangoPolls\DjangoPolls\wsgi.py started")
+
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "DjangoPolls.settings")
 
 # This application object is used by any WSGI server configured to use this
@@ -26,3 +28,5 @@ application = get_wsgi_application()
 # Apply WSGI middleware here.
 # from helloworld.wsgi import HelloWorldApplication
 # application = HelloWorldApplication(application)
+
+print(r"D:\examples\Python\LearningDjango01\DjangoPolls\DjangoPolls\wsgi.py ended")
